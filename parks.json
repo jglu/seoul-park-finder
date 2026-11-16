@@ -1,0 +1,5 @@
+[
+  { "name": "Seoul Forest", "lat": 37.5444, "lng": 127.0374, "info": "Large park with trails and a deer enclosure." },
+  { "name": "Namsan Park",  "lat": 37.5512, "lng": 126.9882, "info": "Hilltop park next to N Seoul Tower." },
+  { "name": "Olympic Park", "lat": 37.5207, "lng": 127.1214, "info": "Sculptures, lakes and sports venues." }
+]
