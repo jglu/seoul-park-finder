@@ -1,3 +1,3 @@
-# Open Source Platform - Team Project Homepage
+# Seoul Park Finder
 
-This repo exists to practice working on a simple repo within a team.
+Easily find parks in Seoul. Real parks, real easy.
