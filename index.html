@@ -1,17 +1,31 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Parks map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Parks in Seoul</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=0t1sd32b2o"></script>
 </head>
-
 <body>
-  <button id="locate-btn">📍 My location</button>
-  <div id="map"></div>
+  <header class="app-header">
+    <h1>Parks in Seoul</h1>
+    <button id="lang-btn" class="btn">English / 한국어</button>
+  </header>
+
+  <main class="layout">
+    <div class="map-area">
+      <button id="locate-btn" class="btn">📍 My location</button>
+      <div id="map"></div>
+    </div>
+    <aside class="info-panel" id="info-panel">
+      <section id="detail" class="card hidden"></section>
+      <h2>Nearby parks</h2>
+      <ul id="park-list" class="park-list"></ul>
+    </aside>
+  </main>
+
   <script src="app.js"></script>
 </body>
-
 </html>

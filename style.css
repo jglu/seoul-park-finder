@@ -1,7 +1,148 @@
-#map { width: 100%; height: 500px; }
-.popup { padding: 10px; max-width: 220px; }
+/* ===== 1. Design tokens ===== */
+:root {
+  --color-primary: #178a4a;
+  --color-primary-dark: #0f6b38;
+  --color-primary-light: #e7f5ec;
+  --color-bg: #f5f7f6;
+  --color-surface: #ffffff;
+  --color-text: #1c1f1d;
+  --color-text-sub: #6b7280;
+  --color-border: #e5e9e6;
+
+  --font: "Noto Sans KR", system-ui, sans-serif;
+  --font-title: 1.125rem;
+  --font-body: 1rem;
+  --font-sub: 0.875rem;
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+
+  --radius: 14px;
+  --radius-pill: 999px;
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --tap: 44px;
+}
+
+/* ===== 2. Base ===== */
+body {
+  margin: 0;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font);
+  font-size: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+.hidden { display: none; }
+
+/* ===== 3. Shared button ===== */
+.btn {
+  min-height: var(--tap);
+  padding: 0 var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: inherit;
+  font-size: var(--font-sub);
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background 0.15s;
+}
+.btn:hover { background: var(--color-primary-light); }
+.btn:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* ===== 4. Header ===== */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 56px;
+  padding: var(--space-1) var(--space-2);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+.app-header h1 {
+  margin: 0;
+  font-size: var(--font-title);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+.app-header .btn { box-shadow: none; }
+
+/* ===== 5. Layout ===== */
+.layout {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.map-area { position: relative; flex: 1; min-height: 300px; }
+#map { width: 100%; height: 100%; min-height: 300px; }
+#locate-btn {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 10;
+}
+
+/* ===== 6. Info panel (mobile: bottom sheet) ===== */
+.info-panel {
+  position: relative;
+  z-index: 5;
+  margin-top: -20px;
+  padding: var(--space-3) var(--space-2) var(--space-2);
+  max-height: 45%;
+  overflow-y: auto;
+  background: var(--color-surface);
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
+}
+.info-panel::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 4px;
+  margin: -12px auto 12px;
+  border-radius: 2px;
+  background: var(--color-border);
+}
+.info-panel h2 {
+  margin: 0 0 var(--space-1);
+  font-size: var(--font-title);
+}
+.info-panel .sub {
+  margin: 0 0 var(--space-2);
+  font-size: var(--font-sub);
+  color: var(--color-text-sub);
+}
+
+@media (min-width: 768px) {
+  .layout { flex-direction: row; }
+  .map-area { flex: 1; }
+  .info-panel {
+    flex: none;
+    width: 380px;
+    max-height: none;
+    margin-top: 0;
+    padding: var(--space-3);
+    border-radius: 0;
+    border-left: 1px solid var(--color-border);
+    box-shadow: none;
+  }
+  .info-panel::before { display: none; }
+}
+
+/* ===== 7. Elements created by app.js (do not change without checking app.js) ===== */
 .me-dot {
   width: 16px; height: 16px; background: #1a73e8;
   border: 3px solid #ffffff; border-radius: 50%;
-  box-shadow: 0 0 6px rgba(0,0,0,0.5);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
+.popup { padding: 10px; max-width: 220px; font-family: var(--font); }
