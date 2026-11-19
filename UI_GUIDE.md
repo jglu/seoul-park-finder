@@ -24,7 +24,6 @@ Shared UI defaults for Seoul Park Finder. This is a proposal, so open an issue o
 | Group | Tokens |
 |---|---|
 | Color | `--color-primary` `--color-primary-dark` `--color-primary-light` `--color-bg` `--color-surface` `--color-text` `--color-text-sub` `--color-border` |
-| Difficulty | `--easy` `--moderate` `--hard` |
 | Font | `--font` · sizes `--font-title` (18px) `--font-body` (16px) `--font-sub` (14px) |
 | Spacing | `--space-1` (8px) `--space-2` (16px) `--space-3` (24px) |
 | Shape | `--radius` (14px) `--radius-pill` `--shadow` |
