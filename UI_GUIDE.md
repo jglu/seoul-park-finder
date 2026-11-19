@@ -4,12 +4,16 @@ Shared UI defaults for Seoul Park Finder. This is a proposal, so open an issue o
 
 ## Rules
 
-1. **Use tokens, not raw values.** Colors, font sizes, spacing and radius come from `:root` in `style.css`.
+1. **Use tokens for repeated values.** Colors, font sizes, spacing and radius come from `:root` in `style.css`.
    ```css
    /* good */  padding: var(--space-2); color: var(--color-primary);
    /* avoid */ padding: 16px;           color: #178a4a;
    ```
-   If you need a new value, add a token instead of hard-coding it.
+   One-off values (like a single icon's size) can be written directly:
+   ```css
+   .pin { width: 32px; background: var(--color-primary); }
+   ```
+   Tip: type `var(--` in VS Code to get a list of tokens.
 2. **Buttons use `.btn`.** `<button class="btn">...</button>` gives the shared size, focus ring and hover state.
 3. **Tap targets are at least 44px** (`--tap`), because most people will use this on a phone.
 4. **Mobile first.** Write the mobile style first, then override inside `@media (min-width: 768px)`.
