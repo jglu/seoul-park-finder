@@ -1,4 +1,8 @@
 /* ===== 1. Design tokens ===== */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 :root {
   --color-primary: #178a4a;
   --color-primary-dark: #0f6b38;
@@ -146,3 +150,11 @@ body {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
 .popup { padding: 10px; max-width: 220px; font-family: var(--font); }
+
+
+
+imc, video {
+    max-width:100%;
+    height: auto;
+    display: block;
+}
