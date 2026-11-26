@@ -18,9 +18,9 @@
   --font-body: 1rem;
   --font-sub: 0.875rem;
 
-  --space-1: 8px;
-  --space-2: 16px;
-  --space-3: 24px;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
 
   --radius: 14px;
   --radius-pill: 999px;
@@ -77,6 +77,7 @@ img, video {
   padding: var(--space-1) var(--space-2);
   background: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
+  flex-wrap: wrap; gap: var(--space-1);
 }
 .app-header h1 {
   margin: 0;

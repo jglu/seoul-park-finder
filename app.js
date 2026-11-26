@@ -9,7 +9,21 @@ let myMarker = null;
 async function loadParks() {
   const response = await fetch("parks.json");
   const parks = await response.json();
-  parks.forEach(addParkMarker);
+  const list = document.getElementById("park-list");
+  list.innerHTML = "";
+
+  parks.forEach((park) => {
+    addParkMarker(park);
+
+    const li = document.createElement("li");
+    li.className = "park-card";
+    li.innerHTML = `<strong>${park.name}</strong><p>${park.info}</p>`;
+    li.addEventListener("click", () => {
+      map.setCenter(new naver.maps.LatLng(park.lat, park.lng));
+      map.setZoom(15);
+    });
+    list.appendChild(li);
+  });
 }
 
 function addParkMarker(park) {
