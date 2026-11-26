@@ -41,6 +41,12 @@ body {
 }
 .hidden { display: none; }
 
+img, video {
+    max-width:100%;
+    height: auto;
+    display: block;
+}
+
 /* ===== 3. Shared button ===== */
 .btn {
   min-height: var(--tap);
@@ -151,10 +157,3 @@ body {
 }
 .popup { padding: 10px; max-width: 220px; font-family: var(--font); }
 
-
-
-imc, video {
-    max-width:100%;
-    height: auto;
-    display: block;
-}
