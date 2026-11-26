@@ -27,3 +27,7 @@ Add or edit parks in `parks.json`:
 { "name": "Seoul Forest", "lat": 37.5444, "lng": 127.0374, "info": "Large park with trails." }
 ```
 can be changed however needed
+
+## UI
+
+See [UI_GUIDE.md](UI_GUIDE.md) for shared design tokens, layout and styling rules.
